@@ -25,7 +25,12 @@
     myLabel.textAlignment = NSTextAlignmentCenter;
     myLabel.userInteractionEnabled = YES;
     
+    UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(labelDragged:)];
+    
+    [myLabel addGestureRecognizer:gesture];
     [self.visionView addSubview:myLabel];
+    
+    
     
 }
 
@@ -33,7 +38,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)labelDragged:(UIPanGestureRecognizer *)gesture{
+    
+    UILabel *label = (UILabel *)gesture.view;
+    CGPoint translation = [gesture translationInView:label];
+    
+    //Move Label
+    label.center = CGPointMake(label.center.x + translation.x, label.center.y + translation.y);
+    
+    [gesture setTranslation:CGPointZero inView:label];
+    
+}
 - (IBAction)addPressed:(id)sender {
 }
 

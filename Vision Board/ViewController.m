@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
+@interface ViewController (){
+    UIPanGestureRecognizer *gesture;
+    
+    
+}
 @end
 
 @implementation ViewController
@@ -24,7 +27,7 @@
     myLabel.textAlignment = NSTextAlignmentCenter;
     myLabel.userInteractionEnabled = YES;
     
-    UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(labelDragged:)];
+    gesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(labelDragged:)];
     
     [myLabel addGestureRecognizer:gesture];
     [self.visionView addSubview:myLabel];
@@ -37,19 +40,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)labelDragged:(UIPanGestureRecognizer *)gesture{
+-(void)labelDragged:(UIPanGestureRecognizer *)gesturee{
     
-    UILabel *label = (UILabel *)gesture.view;
-    CGPoint translation = [gesture translationInView:label];
+    UILabel *label = (UILabel *)gesturee.view;
+    CGPoint translation = [gesturee translationInView:label];
     
     //Move Label
     label.center = CGPointMake(label.center.x + translation.x, label.center.y + translation.y);
     
-    [gesture setTranslation:CGPointZero inView:label];
+    [gesturee setTranslation:CGPointZero inView:label];
     
 }
 - (IBAction)addPressed:(id)sender {
+    UILabel *myNewLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 100, 100)];
+    myNewLabel.text = @"Drag Me 2";
+    myNewLabel.textAlignment = NSTextAlignmentCenter;
+    myNewLabel.userInteractionEnabled = YES;
+    UIPanGestureRecognizer *panNew = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(labelDragged:)];
     
+    [myNewLabel addGestureRecognizer:panNew];
+    [self.visionView addSubview:myNewLabel];
     
 }
 

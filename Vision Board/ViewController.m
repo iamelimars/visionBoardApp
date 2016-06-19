@@ -11,14 +11,15 @@
 @interface ViewController (){
     UIPanGestureRecognizer *gesture;
     int count;
-    UILabel *myNewLabel;
+
 
     
 }
+
 @end
 
 @implementation ViewController
-@synthesize myLabel;
+@synthesize myLabel, myNewLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,10 +47,11 @@
 -(void)labelDoubleTapped:(UITapGestureRecognizer *)gesturee{
     
     self.textField.hidden = NO;
-    [self.textField becomeFirstResponder];
     
-    myNewLabel.textColor = [UIColor blueColor];
-    NSLog(@"Label double tapped");
+    //myNewLabel.textColor = [UIColor blueColor];
+    UILabel *label = (UILabel*)[self.visionView viewWithTag:3];
+    
+    NSLog(@"Label double tapped %i", myNewLabel.tag);
     
     
     
@@ -78,6 +80,7 @@
     
     myNewLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 100, 100)];
     myNewLabel.text = labelTitle;
+    myNewLabel.tag = count;
     myNewLabel.textAlignment = NSTextAlignmentCenter;
     myNewLabel.userInteractionEnabled = YES;
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(labelDoubleTapped:)];

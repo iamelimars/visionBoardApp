@@ -16,6 +16,8 @@
 - (IBAction)savePressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 - (IBAction)dismissKeyboard:(id)sender;
+@property (strong, nonatomic) UILabel *myNewLabel;
+
 
 @end
 

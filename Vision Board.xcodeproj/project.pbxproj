@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		883E14471D16ED390024F7D5 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 883E14461D16ED390024F7D5 /* CollectionViewController.m */; };
 		886F79EE1D165AE500D2607D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 886F79ED1D165AE500D2607D /* main.m */; };
 		886F79F11D165AE500D2607D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 886F79F01D165AE500D2607D /* AppDelegate.m */; };
 		886F79F41D165AE500D2607D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 886F79F31D165AE500D2607D /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		883E14451D16ED390024F7D5 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		883E14461D16ED390024F7D5 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		886F79E91D165AE500D2607D /* Vision Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vision Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		886F79ED1D165AE500D2607D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		886F79EF1D165AE500D2607D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				886F79F01D165AE500D2607D /* AppDelegate.m */,
 				886F79F21D165AE500D2607D /* ViewController.h */,
 				886F79F31D165AE500D2607D /* ViewController.m */,
+				883E14451D16ED390024F7D5 /* CollectionViewController.h */,
+				883E14461D16ED390024F7D5 /* CollectionViewController.m */,
 				886F79F51D165AE500D2607D /* Main.storyboard */,
 				886F79FB1D165AE500D2607D /* Assets.xcassets */,
 				886F79FD1D165AE500D2607D /* LaunchScreen.storyboard */,
@@ -279,6 +284,7 @@
 				886F79FA1D165AE500D2607D /* Vision_Board.xcdatamodeld in Sources */,
 				886F79F41D165AE500D2607D /* ViewController.m in Sources */,
 				886F79F11D165AE500D2607D /* AppDelegate.m in Sources */,
+				883E14471D16ED390024F7D5 /* CollectionViewController.m in Sources */,
 				886F79EE1D165AE500D2607D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +509,7 @@
 				886F7A1B1D165AE500D2607D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		886F7A1C1D165AE500D2607D /* Build configuration list for PBXNativeTarget "Vision BoardTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +518,7 @@
 				886F7A1E1D165AE500D2607D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		886F7A1F1D165AE500D2607D /* Build configuration list for PBXNativeTarget "Vision BoardUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +527,7 @@
 				886F7A211D165AE500D2607D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

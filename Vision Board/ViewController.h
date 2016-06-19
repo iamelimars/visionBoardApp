@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView *visionView;
 - (IBAction)addPressed:(id)sender;
 - (IBAction)savePressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+- (IBAction)dismissKeyboard:(id)sender;
 
 @end
 

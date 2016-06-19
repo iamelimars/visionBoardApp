@@ -10,7 +10,9 @@
 
 @interface ViewController (){
     UIPanGestureRecognizer *gesture;
-    
+    int count;
+    UILabel *myNewLabel;
+
     
 }
 @end
@@ -26,9 +28,10 @@
     myLabel.text = @"Drag Me";
     myLabel.textAlignment = NSTextAlignmentCenter;
     myLabel.userInteractionEnabled = YES;
-    
+    UITapGestureRecognizer *taptap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(labelDoubleTapped:)];
+    [taptap setNumberOfTapsRequired:2];
     gesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(labelDragged:)];
-    
+    [myLabel addGestureRecognizer:taptap];
     [myLabel addGestureRecognizer:gesture];
     [self.visionView addSubview:myLabel];
     
@@ -39,6 +42,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)labelDoubleTapped:(UITapGestureRecognizer *)gesturee{
+    
+    self.textField.hidden = NO;
+    [self.textField becomeFirstResponder];
+    
+    myNewLabel.textColor = [UIColor blueColor];
+    NSLog(@"Label double tapped");
+    
+    
+    
 }
 -(void)labelDragged:(UIPanGestureRecognizer *)gesturee{
     
@@ -52,19 +66,44 @@
     
 }
 - (IBAction)addPressed:(id)sender {
-    UILabel *myNewLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 100, 100)];
-    myNewLabel.text = @"Drag Me 2";
+    self.textField.hidden = NO;
+    [self.textField becomeFirstResponder];
+    
+    [self createNewLabel:myLabel];
+    
+}
+-(void)createNewLabel: (UILabel *)newlabel{
+    count ++;
+    NSString *labelTitle = [NSString stringWithFormat:@"Drag Me %i", count];
+    
+    myNewLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 100, 100)];
+    myNewLabel.text = labelTitle;
     myNewLabel.textAlignment = NSTextAlignmentCenter;
     myNewLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(labelDoubleTapped:)];
     UIPanGestureRecognizer *panNew = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(labelDragged:)];
-    
+    [doubleTap setNumberOfTapsRequired:2];
+    [myNewLabel addGestureRecognizer:doubleTap];
     [myNewLabel addGestureRecognizer:panNew];
     [self.visionView addSubview:myNewLabel];
+    
+}
+
+-(void)editLabelText: (UILabel *)label{
+    
     
 }
 
 - (IBAction)savePressed:(id)sender {
     
     
+}
+- (IBAction)dismissKeyboard:(id)sender {
+    
+    myNewLabel.text = self.textField.text;
+    
+    self.textField.hidden = YES;
+    [self resignFirstResponder];
+
 }
 @end

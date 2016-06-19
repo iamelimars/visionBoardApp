@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"Begin");
     
     myLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 100, 100)];
     myLabel.text = @"Drag Me";
@@ -50,8 +49,12 @@
     
 }
 - (IBAction)addPressed:(id)sender {
+    
+    
 }
 
 - (IBAction)savePressed:(id)sender {
+    
+    
 }
 @end

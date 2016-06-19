@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) UILabel *myLabel;
+@property (weak, nonatomic) IBOutlet UIView *visionView;
+- (IBAction)addPressed:(id)sender;
+- (IBAction)savePressed:(id)sender;
 
 @end
 

@@ -7,6 +7,9 @@
 //
 
 #import "CollectionViewController.h"
+#import "CHTCollectionViewWaterfallLayout.h"
+
+
 
 @interface CollectionViewController ()
 
@@ -61,6 +64,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
     cell.backgroundColor = [UIColor redColor];
     // Configure the cell
     
@@ -73,6 +77,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     
 }
+
+
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
